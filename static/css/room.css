@@ -1,0 +1,103 @@
+.message-box {
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: white;
+    height: 80vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    background: #e6e6e6;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.text strong {
+    color: #007BFF;
+}
+
+.text span {
+    word-wrap: break-word;
+}
+
+.text:nth-child(even) {
+    background: #d1ecf1;
+}
+
+.muted {
+    font-size: 12px;
+    color: gray;
+    text-align: right;
+}
+
+.inputs {
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    border-top: 2px solid #ccc;
+}
+
+#message {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#send-btn {
+    padding: 12px 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #218838;
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

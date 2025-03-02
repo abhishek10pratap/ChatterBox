@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="message-box">
+  <h2>Chat Room: {{ code }}</h2>
+  <div class="messages" id="messages">
+    {% for msg in messages %}
+    <div class="text">
+      <span>
+        <strong>{{ msg.name }}</strong>: {{ msg.message }}
+      </span>
+      <span class="muted">
+        {{ msg.timestamp }}
+      </span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="inputs">
+    <input type="text" placeholder="Type a message..." name="message" id="message" />
+    <button type="button" id="send-btn" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var socketio = io();
+  const messages = document.getElementById("messages");
+
+  const createMessage = (name, msg) => {
+    const content = `
+    <div class="text">
+        <span><strong>${name}</strong>: ${msg}</span>
+        <span class="muted">${new Date().toLocaleTimeString()}</span>
+    </div>`;
+    messages.insertAdjacentHTML("beforeend", content);
+    messages.scrollTop = messages.scrollHeight;
+  };
+
+  socketio.on("message", (data) => {
+    createMessage(data.name, data.message);
+  });
+
+  const sendMessage = () => {
+    const messageInput = document.getElementById("message");
+    const message = messageInput.value.trim();
+
+    if (message === "") return;
+
+    socketio.emit("message", { name: "{{ session['name'] }}", message: message });
+
+
+    messageInput.value = "";
+  };
+</script>
+
+{% endblock %}

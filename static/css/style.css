@@ -1,0 +1,252 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    background: #ffe6e6;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.join-room {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.join-room input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.join-btn {
+    background-color: #007BFF;
+}
+
+.join-btn:hover {
+    background-color: #0056b3;
+}
+
+.create-btn {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+
+.create-btn:hover {
+    background-color: #218838;
+}
+
+ 
+@media (max-width: 400px) {
+    .home-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .join-room {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .join-room input {
+        width: 100%;
+    }
+}
+
+
+
+
+/**********************/
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.message-box {
+    border-radius: 10px;
+    background: white;
+    height: 80vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+ 
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    background: #e6e6e6;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    max-width: 75%;
+    align-self: flex-start;
+}
+
+.text strong {
+    color: #007BFF;
+}
+
+.text:nth-child(even) {
+    background: #d1ecf1;
+}
+
+.muted {
+    font-size: 12px;
+    color: gray;
+    text-align: right;
+    margin-top: 3px;
+}
+
+ 
+.inputs {
+    display: flex;
+    padding: 15px;
+    background: #fff;
+    border-top: 2px solid #ccc;
+    position: sticky;
+    bottom: 0;
+}
+
+#message {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#send-btn {
+    padding: 12px 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #218838;
+}
+
+ 
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+ 
+@media (max-width: 600px) {
+    .message-box {
+        width: 90vw;
+        height: 85vh;
+    }
+
+    #send-btn {
+        padding: 10px 15px;
+    }
+}
+
